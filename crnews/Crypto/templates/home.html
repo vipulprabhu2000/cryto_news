@@ -1,0 +1,38 @@
+{% extends 'base.html'%} {% block content %}
+<!-- {{api.coins.0.item.name}} -->
+<style>
+  .container-coin {
+    display: flex;
+    flex-wrap: wrap;
+    margin:20px;
+    
+  }
+  .card{
+     
+      margin: 20px;
+
+  }
+</style>
+
+<!-- top jumbotron -->
+<div class="jumbotron">
+    <h1 class="display-4">Crypto, world!</h1>
+    <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+  </div>
+  <br>
+
+<div class="container-coin">
+  {% for x in api.coins %}
+
+  <div class="card" style="width: 10rem">
+    <img src="{{x.item.large}}" class="card-img-top" alt="..." />
+    <div class="card-body">
+      <h3 class="card-title">{{x.item.name}}</h3>
+      <h6 class="card-price">Market-cap-rank:-{{x.item.market_cap_rank}}</h6>
+      <h6 class="card-price">Price:-{{x.item.price_btc}}</h6>
+    </div>
+  </div>
+
+  {% endfor %}
+</div>
+{% endblock %}
