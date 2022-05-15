@@ -1,0 +1,26 @@
+{%extends 'base.html'%}
+
+
+{%block content%}
+
+<div class="card mb-3" style="max-width: 540px;margin-left:30rem;margin-top:5rem">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src="{{crypto.image.large}}" class="img-fluid rounded-start" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">{{crypto.name}}</h5>
+          <p class="card-text">
+            <strong>Current price:     {{crypto.market_data.current_price.inr}}</strong><br>  
+            <strong>24h high:     {{crypto.market_data.high_24h.inr}}</strong><br>
+            <strong>24h Low:     {{crypto.market_data.low_24h.inr}}</strong> <br>
+            <strong>Market cap:     {{crypto.market_data.market_cap.inr}}</strong> <br>
+            <strong>Total volume:     {{crypto.market_data.total_volume.inr}}</strong> <br>
+        </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{%endblock%}

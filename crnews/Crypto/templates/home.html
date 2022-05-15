@@ -12,14 +12,44 @@
       margin: 20px;
 
   }
+ 
 </style>
 
 <!-- top jumbotron -->
 <div class="jumbotron">
-    <h1 class="display-4">Crypto, world!</h1>
-    <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-  </div>
+  <center><h1 class="display-4"><b>Crypto world!</b> </h1></center>
   <br>
+  <div class="no" style="margin-left:7% ;"><h3>Live Chart</h3></div>
+</div>
+
+  <br>
+</div>
+
+<div class="contain-table" style=" width:80rem;margin-left:5%">
+  <table class="table table-dark table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Coin</th>
+        <th scope="col">Current Price</th>
+        <th scope="col">Market_cap</th>
+        <th scope="col">high_24h</th>
+        <th scope="col">low_24h</th>
+      </tr>
+    </thead>
+    <tbody>
+      {%for y in api_hist %}
+      <tr>
+        <td>{{y.name}}</td>
+        <td>{{y.current_price}}</td>
+        <td>{{y.market_cap}}</td>
+        <td>{{y.high_24h}}</td>
+        <td>{{y.low_24h}}</td>
+      </tr>
+      {%endfor%}
+    </tbody>
+  </table>
+</div>
+
 
 <div class="container-coin">
   {% for x in api.coins %}
@@ -33,6 +63,9 @@
     </div>
   </div>
 
+  
+
   {% endfor %}
-</div>
+
+  
 {% endblock %}
